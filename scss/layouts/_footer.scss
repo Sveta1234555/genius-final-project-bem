@@ -56,12 +56,18 @@
 
     // .footer__container color
     &__container-color {
+        background-color: greenyellow;
+        // margin: 122.5px auto 0; //от фона вертикально до футера 18  50, а не по 30
+        //-24 вместо auto  - чтобы закрашивалось до вертик. краев футера
+        margin: 122.5px -24px 0; //от фона вертикально до футера 18  50, а не по 30
+        // margin-top: 122.5px; //опустить фон с содержимым вниз, от верха футера
 
         //еще внешний контейнер для фона
         @media screen and (min-width: $bp-desktop) {
             // padding: 30px 0;//фон Bckgr заливает только весь элемент внутри.  вместе с padding внутрь
-            margin: 30px -24px; //-24 общий container 24 внутрь, а закрасить надо до границ внешних
-            background-color: aquamarine;
+            // margin: 30px -24px; //-24 общий container 24 внутрь, а закрасить надо до границ внешних
+            margin: 18px -24px 50px; //от фона вертикально до футера 18  50, а не по 30
+            // background-color: aquamarine;
         }
 
     }
@@ -83,11 +89,14 @@
     // .footer__dog-img
     &__dog-img {
         max-width: 128px;
-        margin: 0 auto; //центрировать собвчку
+        // margin: 0 auto; //центрировать собвчку
+        margin: -122.5px auto; //выехать собачку за фон вверх
 
         @media screen and (min-width: $bp-desktop) {
             max-width: 292px;
-            margin-right: 100px; //десктопная собачка не поцентру, а влево. На макете - 100 справа
+            // margin-right: 100px; //десктопная собачка не поцентру, а влево. На макете - 100 справа
+            // 100-24=76
+            margin-right: 76px; //десктопная собачка не поцентру, а влево. На макете - 100 справа
             //собачка за границы фона вверх-вниз вылазит , до гориз.границ футера
             margin-top: -18px;
             margin-bottom: -50px;
@@ -101,12 +110,17 @@
         /* между блоками крупными 2-мя - элементами flex (nav и address) родительского footer-container */
         // между контакты и Политика 16 (из-за socials между Политика и coptight)
         gap: 16px;
+        margin: 122.5px auto 0; //блок текстов footer-container – до футера 122.5 (собачка наезжает снизу на logo)
         border: 1px solid blue; //убрать!!!
 
         @media screen and (min-width: $bp-desktop) {
             flex-direction: row; //для десктоп. - гориз
             gap: 136px; // gap: 20px;
-            padding: 32px 0px 31px 100px;
+            // padding: 32px 0px 31px 100px;  
+            // 100-24 слева = 76
+            padding: 32px 0px 31px 76px;
+            margin: 0 auto; //убрать 122.5 от моб 
+            justify-content: space-between; //убрать отступ от собачки слева, распределять в flex-е слева по краям
         }
     }
 
