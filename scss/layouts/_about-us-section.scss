@@ -5,7 +5,11 @@
 
   //по той же схеме - padding между секциями ниже 3-й по 40  одинаковые (как 96 для десктоп) 
   //  104=84этот +20 будет в след секц  - отличается для между  2about-us и 3why-us секц
-  padding-bottom: 104px;
+  // padding-bottom: 104px;
+  //нет. какие 84 не поняла теперь
+
+  padding-top: 40px; //между 1hero и 2about-us  - все на abou-us
+  padding-bottom: 20px; //40/2 между 2about-us и 3why-us секц
 
   // margin-top: 50px; //по замеч по дз4
 

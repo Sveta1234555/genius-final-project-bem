@@ -1,7 +1,16 @@
 /* Section 4 - procedure */
 
 .procedure-section {
-  //просто родитель, без стилей на этом уровне
+  //просто родитель, без стилей на этом уровне, 
+  // кроме оступов между секц padding 
+  padding-top: 20px; //40/2
+  padding-bottom: 36px; //72/2
+
+
+  @media screen and (min-width: $bp-desktop) {
+    padding-top: 48px;
+    padding-bottom: 0px;
+  }
 
   // .procedures-container {
   // .procedure-section__container {

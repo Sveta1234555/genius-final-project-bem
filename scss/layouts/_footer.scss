@@ -8,11 +8,12 @@
     background-repeat: no-repeat;
     background-position: center top;
     /* background-size: cover; */
-    padding: 32px 0px 66px;
+    padding: 20px 0px 40px; // 20 = 40/2 , 40 wцелые снизу footer  //padding: 32px 0px 66px;
 
     @media screen and (min-width: $bp-desktop) {
         /* padding: 56px; убрать отступы слева справа*/
-        padding: 56px 0;
+        // padding: 56px 0;
+        padding: 36px 0 50px;
         /* Слева- спрва в уроке убрали. Но можно 100 поставить, если Надо. Не меняет при resize визуально  ничего */
         /* padding: 56px 100px; */
 
@@ -23,37 +24,76 @@
 
 
 
-    // .footer::after {
-    &::after {
+    // // .footer::after {
+    // &::after {
+    //     dog - сделан картинкйо вноутри footer. after ненадо //в моб версии картиник в футере нет.
 
-        //в моб версии картиник в футере нет.
-        //Можно display none - display block добавить. Но работает и так
+    //     //Можно display none - display block добавить. Но работает и так
+    //     @media screen and (min-width: $bp-desktop) {
+    //         /* картинка бутылочки внизу справа  */
+    //         position: absolute;
+    //         /* png - Прозрачная картинка */
+    //         // background-image: url(../images/PhotoRoom.png);
+    //         background-image: url(../images/footer-dog.png);
+    //         /* т.к. это – декор, ненадо добавлять через разметку html тэгом img, а делаем псевдоэлементом after. */
+    //         content: "";
+    //         /* добавлением размера фона картинка не появилась */
+    //         /* background-size: 247px 152px; */
+    //         /* размеры задать явно*/
+    //         width: 247px;
+    //         height: 152px;
+    //         /* размеры задали явно, поэтому меняем на 100% */
+    //         /* background-size: 100%; */
+    //         /* убрали 100% т.к. доавили no-repeat */
+    //         background-repeat: no-repeat;
+
+    //         /* поместить в нижний правый угол after */
+    //         bottom: 0;
+    //         right: 0;
+    //     }
+    // }
+
+
+    // .footer__container color
+    &__container-color {
+
+        //еще внешний контейнер для фона
         @media screen and (min-width: $bp-desktop) {
-            /* картинка бутылочки внизу справа  */
-            position: absolute;
-            /* png - Прозрачная картинка */
-            // background-image: url(../images/PhotoRoom.png);
-            background-image: url(../images/footer-dog.png);
-            /* т.к. это – декор, ненадо добавлять через разметку html тэгом img, а делаем псевдоэлементом after. */
-            content: "";
-            /* добавлением размера фона картинка не появилась */
-            /* background-size: 247px 152px; */
-            /* размеры задать явно*/
-            width: 247px;
-            height: 152px;
-            /* размеры задали явно, поэтому меняем на 100% */
-            /* background-size: 100%; */
-            /* убрали 100% т.к. доавили no-repeat */
-            background-repeat: no-repeat;
+            // padding: 30px 0;//фон Bckgr заливает только весь элемент внутри.  вместе с padding внутрь
+            margin: 30px -24px; //-24 общий container 24 внутрь, а закрасить надо до границ внешних
+            background-color: aquamarine;
+        }
 
-            /* поместить в нижний правый угол after */
-            bottom: 0;
-            right: 0;
+    }
+
+    // .footer__container-external {
+    &__container-external {
+        //внешний flex - footer__container + собачка
+        display: flex;
+        flex-direction: column-reverse; //для моб. - вертик  и наоборот, сначала собачка
+        gap: 16px;
+        border: 1px solid green; //убрать!!!
+
+        @media screen and (min-width: $bp-desktop) {
+            flex-direction: row; //для десктоп. - гориз
+            gap: 6px; // gap: 20px;
         }
     }
 
+    // .footer__dog-img
+    &__dog-img {
+        max-width: 128px;
+        margin: 0 auto; //центрировать собвчку
 
-    // .footer-container {
+        @media screen and (min-width: $bp-desktop) {
+            max-width: 292px;
+            margin-right: 100px; //десктопная собачка не поцентру, а влево. На макете - 100 справа
+            //собачка за границы фона вверх-вниз вылазит , до гориз.границ футера
+            margin-top: -18px;
+            margin-bottom: -50px;
+        }
+    }
+
     // .footer__container {
     &__container {
         display: flex;
@@ -61,12 +101,15 @@
         /* между блоками крупными 2-мя - элементами flex (nav и address) родительского footer-container */
         // между контакты и Политика 16 (из-за socials между Политика и coptight)
         gap: 16px;
+        border: 1px solid blue; //убрать!!!
 
         @media screen and (min-width: $bp-desktop) {
             flex-direction: row; //для десктоп. - гориз
-            gap: 20px;
+            gap: 136px; // gap: 20px;
+            padding: 32px 0px 31px 100px;
         }
     }
+
 
     // .footer-nav,  .footer-address {
     // .footer__nav, .footer__address {
@@ -88,6 +131,7 @@
             /* между блоками- элементами flex каждого родительского. попарно */
             // gap: 20px; //вверх в моб.
             text-align: left;
+            gap: 136px; //dog
         }
 
     }
@@ -113,20 +157,25 @@
     //     flex-grow: 1;
     // }
 
-
+    // .footer__logo
     &__logo {
         /* для логотип и список ul заняли по 50% в своем flex-родителе footer__nav*/
-        // у &__menu тоже останется flex-grow: 1;
+        // у &__menu тоже останется (установлен) flex-grow: 1;
         flex-grow: 1;
+        margin: 0 auto; //центрировать logo в моб
+
+        @media screen and (min-width: $bp-desktop) {
+            margin: 0; //отменить центр. logo  для декстоп
+        }
     }
 
-
+    // .footer__menu
     &__menu {
         display: flex;
         flex-direction: column;
         gap: 16px;
         /* для логотип и список ul заняли по 50% в своем flex-родителе footer__nav*/
-        // у &__logo тоже останется flex-grow: 1;
+        // у &__logo тоже останется (установлен) flex-grow: 1;
         flex-grow: 1;
     }
 
@@ -178,15 +227,22 @@
     // .footer-link {
     // .footer__link {
     &__link {
-        color: var(--color-primary-white);
-        font-size: 14px;
+        //меню nav  - шрифт
+        color: var(--color-primary-black);
+        font-size: 16px;
+        line-height: 1;
         // font-weight: 400  наслед
         /* 14/16,4 ~1.17  1.2 default */
         // display: none;--
+        white-space: nowrap; //не переносить меню на 2-ю строка
 
         @media screen and (min-width: $bp-desktop) {
-            font-size: 16px;
-            /* 16/19 =1.18  1.2 default */
+            font-size: 18px;
+            /* 24/18 =1.18  1.333 default */
+            //не взялось после моб 100% . назначить явно заново
+            line-height: 1.33;
+            letter-spacing: 5%; //браузер ругается, VScode - норм
+
             //text-decoration: none; //перенесено в класс .link
             /* анимация переход цвета ссылки при hover - плавно меняется цвет текста и фонт*/
             //transition: color 0.2s, font-weight 0.2s; //перенесено в класс .link

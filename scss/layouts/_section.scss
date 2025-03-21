@@ -1,5 +1,5 @@
 /* Section all  */
-/* одинаковый класс всем секциям, кроме header,footer,hero-section */
+/* одинаковый класс всем секциям, кроме header,footer,hero-section -нет*/
 .section {
   padding: 20px 0;
 
@@ -8,7 +8,12 @@
   1.верхняя секция padding-bottom и 2. Нижняя соседняя секция padding-top  */
     /* горизонтальные- 0 */
     // padding: 48px 0; // dog  убрать сверху снизу 48 
-    padding: 48px 0 0 0; // dog  (96 /2 между why-us porcedure)  
+    // padding: 48px 0 0 0; // dog  (96 /2 между why-us porcedure)  
+    // dog - только моб версия ., только padding одинак
+    //добавлены каждой секции свои разныее padding top bottom
+
+    // эта  толкьо для why-us осталась  - снизу 48 (для 96/2 между why-us  procedure)
+    padding: 0 0 48px 0;
 
   }
 
