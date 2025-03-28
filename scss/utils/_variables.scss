@@ -25,12 +25,18 @@
     --color-primary-grey-font: #d8d8d8;
     --color-primary-black-font: #09061c;
     --color-primary-yellow-font: #FFAA00;
+
+    --color-modal-black: #31261A;
+
 }
 
 
 
 // Цвет тени блюр карточек why-us-section
 $color-primary-bluelight: #A8C6F5;
+$color-primary-black-shad: #1818170D;
+// $color-primary-black-blur: red;   для теста - невидно др. цветом
+
 
 $bp-mobile: 480px;
 $bp-tablet: 768px;

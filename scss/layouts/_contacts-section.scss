@@ -33,7 +33,7 @@
 
     @media screen and (min-width: $bp-desktop) {
       /* ДЛя адаптива .  + max-width 709   */
-      max-width: 1059px;
+      max-width: 1240px;
       flex-direction: row; //от десктопа -  форма и карта горизонтально в строку  
       // justify-content: space-between;    //бз
       /* между картой слева и div формы справа gap: 32px; бз*/
@@ -53,8 +53,11 @@
       // //  Двигала в браузере=вроде ничего, центрировано остается с этим -75px
 
       //--- v2 центрирования flex c собаками, уезжает левая собака за границу слева (как в макете фигма)
-      justify-content: center; //space-between; //dog - отключала - не влияет. Меняю на center
-      margin-left: 75px; // для вернуть по центру весь flex - все равно подбор. теже 75px
+      // justify-content: center; //space-between; //dog - отключала - не влияет. Меняю на center
+      // margin-left: 75px; // для вернуть по центру весь flex - все равно подбор. теже 75px
+      //ненадо. собаку влево подвинула на 100, как по макету
+      //Убрала center - после margin-left собакам для разных gap слева-справа от формы. и собаки выезжают слева справа за container
+      //это помогло разному gap и выезжанию собак как надо по макету
     }
   }
 
@@ -68,6 +71,7 @@
       //для h2 в 2 строки по макетц
       max-width: 605px;
       margin-bottom: 16px;
+      margin-top: 137px;
     }
   }
 
@@ -116,7 +120,8 @@
       align-self: end; //книзу flex-a все
       // padding-bottom: 43px;  //так меняется пропорционально размеры - уменьшается собака 
       margin-bottom: 43px; // левая собака выше нижней границы на 43 (на фигме - от нижей границы правой собаки до нижней границы левой собаки)
-
+      max-width: 353px; //реальная ширина картинки
+      margin-left: -100px; //картинка влево за общий container
     }
   }
 
@@ -127,9 +132,11 @@
 
     @media screen and (min-width: $bp-desktop) {
       display: block;
+      margin-left: 30px; //для разных отступов между формой и собаками при одинак gap  (67  97) 
     }
   }
 
+  // .contacts-section__form
   &__form {
 
     // /* .signup-free {   переименовала*/
@@ -140,24 +147,36 @@
       /* 320x434 */
       // max-width: 320px;  // ненадо, так форма гораздо уже, чем padding 24 от общего  родителя container
 
-      background-color: var(--color-primary-bluedark);
-      border: 2px solid var(--color-secondary-bluedark);
-      border-radius: 24px;
+      // background-color: var(--color-primary-bluedark);
+      // border: 2px solid var(--color-secondary-bluedark);
+      // border-radius: 24px;
+
+      /* 320x451 dog*/
+
       /* justify-content: space-between; */
-      // -2*2=4 border  padding: 42px 24px; тогда нормально padding 15 с боков до текста в button, без переноса строки.
-      padding: 38px 20px; //dog - с мод формой доделать
+      //бз -2*2=4 border  padding: 42px 24px; тогда нормально padding 15 с боков до текста в button, без переноса строки.
+
+      // padding: 36px 20px; //dog 36=72/2 между секциями по высоте. надо
+      // нет! - между секциями - устанавливается в section. Здесь - не об этом. УБрать
+      // padding: 0 20px;
+      //20 до краев, до красных. м.б .ненадо. пусть пока.
+      //до красных краев в моб - красный мой тестовый - это container общий . там везде 24, без разницы для моб и десктопн. В образце пекарни тоже
+      // так что эти 20 моб здесь ненадо. они padding 24 общий в container
+      padding: 0px;
+
+
       //центриров формы
       // margin: 0px auto;   // ненадо, когда убрала max-width 320 ( так форма гораздо уже, чем padding 24 от общего  родителя container)
-      padding-top: 0px; //только 8 сверху от h2 - уже устанолвено h2
+      // padding-top: 0px; //только 8 сверху от h2 - уже устанолвено h2
       //dog - остальные padiing - с мод формой доделать!!!
 
       /* подложка формы - фон, бордер... */
       @media screen and (min-width: $bp-desktop) {
-        // /* 423x481 */ max-width: 422px;
-        // 600х595
+        // /* 423x481 */ max-width: 422px; бз
+        // 600х595 
         max-width: 600px;
-        border: 4px solid var(--color-secondary-bluedark);
-        border-radius: 32px;
+        // border: 4px solid var(--color-secondary-bluedark); бз
+        // border-radius: 32px; бз
         // для позиционировать собак по бокам, за границами общего container-a
         flex-basis: 600px;
         // flex-grow: 2;
@@ -183,9 +202,11 @@
 
         /* justify-content: space-between; */
         // -4*2=8 border  padding: 48px 56px; тогда нормально padding 15 с боков до текста в buton, без переноса строки.
-        padding: 40px 48px; //dog - с мод формой доделать
-        padding-top: 0px; //только 16 сверху от h2 - уже устанолвено h2
-        //dog - отсальные padiing - с мод формой доделать!!!
+
+        padding: 0px; // отменить отступы от моб версии . там  - между секциями установлены. надо
+        // нет ! между секциями расстояния - установлены в section, а не здесь, в подложке формы.
+        // padding-top: 0px; //только 16 сверху от h2 - уже устанолвено h2. Неакутально, перенесено h2 в form
+
       }
     }
 
@@ -194,17 +215,54 @@
   // .modal__form-field { modal 24 , contacts 16)
   // .contacts-section__form-field
   &__form-field {
-    // поля ввода уже заголовка h2 в моб
-    padding: 0px 15.5px;
+    // поля ввода уже заголовка h2 в моб - нет
+    // padding: 0px 15.5px;
     /* отступы между div (label+input)   для contacts другие , 16 (не 24 как для Modal) */
     margin-bottom: 16px;
 
     @media screen and (min-width: $bp-desktop) {
       // поля ввода одинак с шириной заголовка h2 в десктоп
       padding: 0px;
-      // /* отступы между div (label+input)   для contacts другие , 16 (не 24 как для Modal) */
-      // margin-bottom: 16px;
-      // И меньше  стала по высоте форма на contacts-section. И почти выровнялась с картой по высоте
+      // /* отступы между div (label+input)   для contacts 24 как для Modal) */
+      margin-bottom: 24px;
+
+    }
+
+    // .contacts-section__form-field--user-name
+    &--user-name {
+      background: url('../images/mod4_1username.svg') no-repeat 24px 8px / 24px 24px;
+
+      @media screen and (min-width: $bp-desktop) {
+        background: url('../images/mod4_1username.svg') no-repeat 40px 8px / 32px 32px;
+      }
+
+    }
+
+    &--pet-name {
+      background: url('../images/mod4_2petname.svg') no-repeat 24px 8px / 24px 24px;
+
+      @media screen and (min-width: $bp-desktop) {
+        background: url('../images/mod4_2petname.svg') no-repeat 40px 8px / 32px 32px;
+      }
+    }
+
+    &--phone {
+      background: url('../images/mod4_3phone.svg') no-repeat 24px 8px / 24px 24px;
+
+      @media screen and (min-width: $bp-desktop) {
+        background: url('../images/mod4_3phone.svg') no-repeat 40px 8px / 32px 32px;
+      }
+
+
+    }
+
+    &--email {
+      background: url('../images/mod4_4email.svg') no-repeat 24px 8px / 24px 24px;
+
+      @media screen and (min-width: $bp-desktop) {
+        background: url('../images/mod4_4email.svg') no-repeat 40px 8px / 32px 32px;
+      }
+
     }
   }
 
@@ -263,6 +321,17 @@
   &__btn-center {
     justify-content: center;
   }
+
+  // //.contacts-section____iagree
+  // ненадо отдельный класс - все одинак iagree - модальн, contacts, footer , мобильн
+  // &__iagree {
+  //   //фонт chek-box "I agree" - одинаково моб, дскт
+  //   font-weight: 300;
+  //   font-size: 12px;
+  //   line-height: 1;
+  //   margin-top: 17px; //сверху до кнопки
+  //   color: var(--color-secondary-grey); //#839AA9;
+  // }
 }
 
 // //вверх

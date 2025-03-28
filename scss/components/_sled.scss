@@ -57,6 +57,7 @@
         // background-color: yellowgreen;
     }
 
+    // sled--left
     &--left {
         @media screen and (min-width: $bp-desktop) {
             rotate: -51deg;
@@ -82,38 +83,44 @@
         }
     }
 
-    // &--arrow {
-    //     // стрелка спиральная в секц 2  about-us
-    //     display: block;
-    //     rotate: 10deg;
-    //     top: 0px;
-    //     left: 232px;
-    //     max-width: 48px;
-    //     max-height: 40px;
-    //     // .about-us-section  &__container  position: relative;
-    //     position: absolute;
+    // sled__modal--------------------------
+    &__modal {
+        max-width: 97px;
+        max-height: 97px;
+        //на модальнйо форме - следы - белые. плохо видно.
+        // fill: var(--color-primary-white); // белый;  вернуть
+        fill: var(--color-primary-yellow-font); // на разработку = пока так, не видно белым;
+        filter: blur(8px); // backdrop-filter: blur(8px);  из макета
 
-    //     @media screen and (min-width: $bp-desktop) {
-    //         display: none;
+        // sled__modal--left-top
+        &--left-top {
+            rotate: -30deg; //-151.97 deg;
+            top: 188px; //202
+            left: 10px; //85px;
+        }
 
-    //     }
-    // }
+        // sled__modal--left-end
+        &--left-end {
+            rotate: -125deg; //-45deg;
+            top: 810px; //849
+            left: -21px;
+        }
 
-    // &--arrow1 {
-    //     @media screen and (min-width: $bp-desktop) {
-    //         // display: block;
-    //         rotate: 10deg;
-    //         top: 0px;
-    //         left: 232px;
-    //         max-width: 48px;
-    //         max-height: 40px;
-    //         // .about-us-section  &__container  position: relative;
-    //         // position: absolute;
+        // sled__modal--right-top
+        &--right-top {
+            rotate: 44deg; //112.25 deg;
+            top: 23px; //107px;
+            left: 641px; //763px;
+        }
 
-    //         fill: var(--color-primary-yellow-font);
+        // sled__modal--right-end
+        &--right-end {
+            rotate: 44deg; //112.25 deg;
+            top: 756px; //833px;
+            left: 740px; //817px;
+        }
 
-    //     }
-    // }
+    }
 }
 
 .arrow {

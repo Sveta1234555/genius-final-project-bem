@@ -59,7 +59,8 @@
         background-color: greenyellow;
         // margin: 122.5px auto 0; //от фона вертикально до футера 18  50, а не по 30
         //-24 вместо auto  - чтобы закрашивалось до вертик. краев футера
-        margin: 122.5px -24px 0; //от фона вертикально до футера 18  50, а не по 30
+        margin: 122.5px -24px 40px; //40 – низ цветной области до футера отстоит на 40
+
         // margin-top: 122.5px; //опустить фон с содержимым вниз, от верха футера
 
         //еще внешний контейнер для фона
@@ -132,8 +133,9 @@
         display: flex;
         flex-direction: column; //для моб. - вертик
         /* между блоками- элементами flex каждого родительского. попарно 
-        //nav : logo - menu, в address:  contacts  -  address-info ) */
-        gap: 20px;
+        // бз - nav : logo - menu, в address:  contacts  -  address-info ) */
+        // dog - от лого до меню в моб версии. Это gap. этот один
+        gap: 24px; //20px;
         text-align: center; //для моб. надо центрировать .  сюда - чтобы наследовалось на все элементы
 
         @media screen and (min-width: $bp-desktop) {
@@ -170,6 +172,17 @@
     //     /* для логотип и список ul заняли по 50% в своем flex*/
     //     flex-grow: 1;
     // }
+
+    // footer__logo-socias
+    &__logo-socias {
+        //только для центрирования logo моб. После доб социконок
+        margin: 0 auto;
+        // На десктопную не повлияло. Осталось влево.,
+        // как и надо.
+        //т.к. там отмена центрирования для декстоп есть
+        //  (.footer__logo - margin: 0; 
+        // и .socials justify-content: flex-start; ).
+    }
 
     // .footer__logo
     &__logo {
@@ -342,12 +355,40 @@
     //   }
 
     // &__address-info  у меня не flex 
+
+    // footer__socials-before
     &__socials-before {
-        //между адресами address-list и группой иконок socials (над иконками)
-        margin-top: 16px;
+        // социконки для моб - под меню, для десктоп - под лого
+        //бз- между адресами address-list и группой иконок socials (над иконками)
+        // моб - этой группы нет. 
+        //в моб версии - они под меню расположены  (footer__socials-after)
+        display: none;
+        gap: 8px;
+
+        @media screen and (min-width: $bp-desktop) {
+            display: flex;
+            margin-top: 24px; //между logo и группой иконок socials 
+        }
     }
 
 
+
+    &__socials-after {
+        //after и before - это социконки относительно меню 
+        // социконки для моб - под меню, для десктоп - под лого
+        // десктоп - этой группы нет. в моб версии - они под меню расположены 
+
+        // margin-top: 24px; // расстояние до меню над соц иконками
+        // margin-bottom: 24px; // расстояние от меню ндо формы вниз
+        // Убрать margin-top -bottom 24.  Сделано в footer__container gap: 24px;
+        gap: 8px;
+
+        @media screen and (min-width: $bp-desktop) {
+
+            // для декстоп версии - этой группы нет. социконки под logo (&__socials-before)
+            display: none;
+        }
+    }
 
     //это чисто тэги были   address li
     /* между Li -адресами - снизу 16 у всех, включая последний */
@@ -375,7 +416,7 @@
         width: 32px;
         height: 100%;
 
-        fill: var(--color-primary-white);
+        fill: var(--color-primary-orange);
         transition: fill 0.2s;
         /* выше на flex-Родителе .icon-link-ul   
   background: transparent; */
@@ -383,7 +424,7 @@
         /* stroke: red; */
 
         @media screen and (min-width: $bp-desktop) {
-            width: 42px;
+            width: 40px;
         }
 
         //вверх на уровено address-icon
@@ -418,7 +459,25 @@
         }
     }
 
+    //footer__iagree
+    &__iagree {
+        //фонт chek-box "I agree" - одинаково моб, дскт
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 1;
+        margin-top: 17px; //сверху до кнопки
+        color: var(--color-secondary-grey); //#839AA9;
 
+        //footer__iagree--top8
+        &--top8 {
+            // в мобверсии формы сверху до кнопки “Explore more”– не 17 (как везде в iagree),а 8 !!!
+            margin-top: 8px; //сверху до кнопки 1 раз  и только в моб вресии
+
+            @media screen and (min-width: $bp-desktop) {
+                margin-top: 17px; //сверху до кнопки для десктопной вернуть 
+            }
+        }
+    }
 }
 
 // //вверх
