@@ -395,7 +395,7 @@
       </section>
 
       <!-- <section class="why-us-section section" id="section-why-us"> -->
-      <section class="section" id="section-services-category">
+      <section class="why-us-section section" id="section-services-category">
         <!-- <h2>Чому люди <span>обирають нас</span></h2> -->
         <div class="wave"></div>
         <!-- <div class="container why-us-container"> -->
@@ -472,7 +472,9 @@
         </div>
       </section>
 
-      <section class="procedure-section section" id="section-happy-customer">
+      <!-- <section class="procedure-section section" id="section-happy-customer"> -->
+      <!-- section - отступы только -->
+      <section class="procedure-section" id="section-happy-customer">
         <div class="container">
           <!-- <h2>Наші <span>процедури</span></h2> -->
           <!-- <h2 class="procedure-section__title section__title"> -->
@@ -613,21 +615,15 @@
         </div>
       </section>
       <!-- <section class="contact-section section" id="section-contacts"> -->
-      <section class="contacts-section section" id="section-contacts">
+      <!-- <section class="contacts-section section" id="section-contacts"> -->
+      <!-- section - отступы только -->
+      <section class="contacts-section" id="section-contacts">
         <div class="container">
-          <h2 class="contacts-section__title section__title">
+          <!-- <h2 class="contacts-section__title section__title">
             Our experts will take care of your friend
-          </h2>
-          <!-- <div class="contacts-container"> -->
+          </h2> -->
 
           <div class="contacts-section__container">
-            <!-- <iframe
-              class="contacts-section__map"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>  -->
-
             <!-- Form         -->
             <!-- <form name="contact-form" autocomplete="on" novalidate> -->
             <!-- <div class="signup-free"> -->
@@ -643,12 +639,17 @@
               <!-- <form name="contact-form" autocomplete="off"> -->
 
               <form name="contact-form" autocomplete="off">
+                <h2 class="contacts-section__title section__title">
+                  Our experts will take care of your friend
+                </h2>
                 <p class="modal__text">
                   Fill out the form so we can contact you!
                 </p>
 
                 <!-- <div class="modal__form-field input"> -->
-                <div class="contacts-section__form-field">
+                <div
+                  class="contacts-section__form-field contacts-section__form-field--user-name"
+                >
                   <label
                     label
                     class="input__label visually-hidden"
@@ -667,7 +668,9 @@
                 </div>
 
                 <!-- pet-name - id другое сделать!!! -->
-                <div class="contacts-section__form-field">
+                <div
+                  class="contacts-section__form-field contacts-section__form-field--pet-name"
+                >
                   <label
                     label
                     class="input__label visually-hidden"
@@ -686,7 +689,9 @@
                 </div>
 
                 <!-- <div class="modal__form-field input"> -->
-                <div class="contacts-section__form-field input">
+                <div
+                  class="contacts-section__form-field contacts-section__form-field--phone input"
+                >
                   <label
                     label
                     class="input__label visually-hidden"
@@ -705,7 +710,9 @@
                 </div>
 
                 <!-- <div class="modal__form-field input"> -->
-                <div class="contacts-section__form-field input">
+                <div
+                  class="contacts-section__form-field contacts-section__form-field--email input"
+                >
                   <label
                     label
                     class="input__label visually-hidden"
@@ -730,7 +737,7 @@
                   Contact us
                 </button>
 
-                <div class="text-center">
+                <div class="footer__iagree footer__iagree--top8 text-center">
                   <input type="checkbox" id="agree" name="agree" />
                   <label for="agree">I agree to the privacy policy</label>
                 </div>
@@ -775,14 +782,14 @@
     </main>
     <footer class="footer">
       <div class="container">
-        <!-- <div class="footer-container"> -->
-        <div class="footer__container">
-          <!-- <nav class="footer-nav"> -->
-          <nav class="footer__nav">
-            <!-- Logo and menu  -->
-            <!-- div чтобы Logo был ссылкой с наведением только на тексте Img, поменьше -->
-            <!-- <div class="footer-logo"> -->
-            <!-- dz4  <div class="footer__logo">
+        <div class="footer__container-color">
+          <div class="footer__container-external">
+            <div class="footer__container">
+              <nav class="footer__nav">
+                <!-- Logo and menu  -->
+                <!-- div чтобы Logo был ссылкой с наведением только на тексте Img, поменьше -->
+                <!-- <div class="footer-logo"> -->
+                <!-- dz4  <div class="footer__logo">
               <a href="#">
                 <img
                   class="logo-width__footer"
@@ -790,111 +797,208 @@
                   alt="Логотип косметологічної клініки Beauty Zone"
               /></a>
             </div> -->
+                <div class="footer__logo-socias">
+                  <div class="footer__logo">
+                    <a class="logo" href="#">
+                      <img
+                        class="logo-sled-size logo-sled-size__footer"
+                        src="./images/icon-sled-logo.svg"
+                        alt="Veterinary clinic icon DOGclub"
+                      />
 
-            <div class="footer__logo">
-              <a class="logo" href="#">
-                <img
-                  class="logo-sled-size logo-sled-size__footer"
-                  src="./images/icon-sled-logo.svg"
-                  alt="Veterinary clinic icon DOGclub"
-                />
+                      <img
+                        class="logo-width__footer"
+                        src="./images/logo.svg"
+                        alt="Veterinary clinic logo DOGclub"
+                      />
+                    </a>
+                  </div>
 
-                <img
-                  class="logo-width__footer"
-                  src="./images/logo.svg"
-                  alt="Veterinary clinic logo DOGclub"
-                />
-              </a>
-            </div>
+                  <ul class="socials footer__socials-before">
+                    <li>
+                      <!-- <a class="icon-link" href=""> -->
+                      <!-- class="icon-link" -->
+                      <a
+                        rel="noopener noreferrer"
+                        href="https://www.instagram.com/"
+                        title="Instagram"
+                        target="_blank"
+                      >
+                        <!-- <svg width="32" height="32"> -->
+                        <!-- <svg class="footer__address-icon" width="42" height="42"> -->
+                        <svg
+                          class="footer__socials-icon"
+                          width="40"
+                          height="40"
+                        >
+                          <use href="images/icons.svg#icon-instagram"></use>
+                        </svg>
+                      </a>
+                      <!-- <img src="./images/instagram.svg" alt="Иконка Instagram" /> -->
+                    </li>
+                    <li>
+                      <!-- <a class="icon-link" href=""> -->
+                      <!-- class="icon-link" -->
+                      <a
+                        href="https://www.facebook.com/"
+                        title="Facebook"
+                        target="_blank"
+                      >
+                        <!-- <svg width="22" height="37"> -->
+                        <!-- <svg class="footer__address-icon" width="42" height="42"> -->
+                        <svg
+                          class="footer__socials-icon"
+                          width="40"
+                          height="40"
+                        >
+                          <use href="images/icons.svg#icon-facebook"></use>
+                        </svg>
+                      </a>
+                      <!-- <img src="./images/facebook.svg" alt="Иконка facebook" /> -->
+                    </li>
+                  </ul>
+                </div>
 
-            <!-- <ul class="footer-menu footer--ul"> -->
-            <!-- <ul class="footer__menu footer__ul"> убрала footer__ul был только отстпу 16 для li-->
-            <ul class="footer__menu">
-              <li>
-                <!-- <a class="footer-link link" href="#section-about-us"> -->
-                <a class="footer__link link" href="#section-less-talk">
-                  Less talk</a
+                <!-- <ul class="footer-menu footer--ul"> -->
+                <!-- <ul class="footer__menu footer__ul"> убрала footer__ul был только отстпу 16 для li-->
+                <ul class="footer__menu">
+                  <li>
+                    <!-- <a class="footer-link link" href="#section-about-us"> -->
+                    <a class="footer__link link" href="#section-less-talk">
+                      Less talk</a
+                    >
+                  </li>
+                  <li>
+                    <!-- <a class="footer-link link" href="#section-why-us">Чому ми</a> -->
+                    <a
+                      class="footer__link link"
+                      href="#section-services-category"
+                      >Services category</a
+                    >
+                  </li>
+                  <li>
+                    <!-- <a class="footer-link link" href="#section-our-procedures" -->
+                    <a class="footer__link link" href="#section-happy-customer"
+                      >Happy customer</a
+                    >
+                  </li>
+                  <li>
+                    <!-- <a class="footer-link link" href="#section-contacts" -->
+                    <a class="footer__link link" href="#section-contacts"
+                      >Contact</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+
+              <ul class="socials footer__socials-after">
+                <li>
+                  <!-- <a class="icon-link" href=""> -->
+                  <!-- class="icon-link" -->
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://www.instagram.com/"
+                    title="Instagram"
+                    target="_blank"
+                  >
+                    <!-- <svg width="32" height="32"> -->
+                    <!-- <svg class="footer__address-icon" width="42" height="42"> -->
+                    <svg class="footer__socials-icon" width="42" height="42">
+                      <use href="images/icons.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                  <!-- <img src="./images/instagram.svg" alt="Иконка Instagram" /> -->
+                </li>
+                <li>
+                  <!-- <a class="icon-link" href=""> -->
+                  <!-- class="icon-link" -->
+                  <a
+                    href="https://www.facebook.com/"
+                    title="Facebook"
+                    target="_blank"
+                  >
+                    <!-- <svg width="22" height="37"> -->
+                    <!-- <svg class="footer__address-icon" width="42" height="42"> -->
+                    <svg class="footer__socials-icon" width="42" height="42">
+                      <use href="images/icons.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                  <!-- <img src="./images/facebook.svg" alt="Иконка facebook" /> -->
+                </li>
+              </ul>
+
+              <form name="contact-form" autocomplete="off">
+                <!-- <div class="modal__form-field input"> -->
+                <div
+                  class="contacts-section__form-field contacts-section__form-field--email input"
                 >
-              </li>
-              <li>
-                <!-- <a class="footer-link link" href="#section-why-us">Чому ми</a> -->
-                <a class="footer__link link" href="#section-services-category"
-                  >Services category</a
-                >
-              </li>
-              <li>
-                <!-- <a class="footer-link link" href="#section-our-procedures" -->
-                <a class="footer__link link" href="#section-happy-customer"
-                  >Happy customer</a
-                >
-              </li>
-              <li>
-                <!-- <a class="footer-link link" href="#section-contacts" -->
-                <a class="footer__link link" href="#section-contacts"
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </nav>
+                  <label
+                    label
+                    class="input__label visually-hidden"
+                    for="user-email"
+                    >Your email</label
+                  >
+                  <input
+                    class="input__control"
+                    type="email"
+                    id="user-email"
+                    name="user-email"
+                    placeholder="Your email"
+                    required
+                  />
+                </div>
 
-          <form name="contact-form" autocomplete="off">
-            <!-- <div class="modal__form-field input"> -->
-            <div class="contacts-section__form-field input">
-              <label label class="input__label visually-hidden" for="user-email"
-                >Your email</label
-              >
-              <input
-                class="input__control"
-                type="email"
-                id="user-email"
-                name="user-email"
-                placeholder="Your email"
-                required
-              />
-            </div>
+                <div class="contacts-section__form-field input">
+                  <label
+                    label
+                    class="input__label visually-hidden"
+                    for="user-cmc"
+                    >Your cmc</label
+                  >
+                  <input
+                    class="input__control"
+                    type="text"
+                    id="user-cmc"
+                    name="user-cmc"
+                    placeholder="Your cmc"
+                    required
+                  />
+                </div>
 
-            <div class="contacts-section__form-field input">
-              <label label class="input__label visually-hidden" for="user-cmc"
-                >Your cmc</label
-              >
-              <input
-                class="input__control"
-                type="text"
-                id="user-cmc"
-                name="user-cmc"
-                placeholder="Your cmc"
-                required
-              />
-            </div>
+                <!-- <button class="modal__button button" type="submit"> -->
+                <!-- <button class="contacts-section__button button" type="submit"></button> -->
+                <div class="contacts-section__btn-center">
+                  <button
+                    class="button__footer button button--center"
+                    type="submit"
+                  >
+                    Contact us
+                  </button>
 
-            <!-- <button class="modal__button button" type="submit"> -->
-            <!-- <button class="contacts-section__button button" type="submit"></button> -->
-            <div class="contacts-section__btn-center">
-              <button
-                class="button__footer button button--center"
-                type="submit"
-              >
-                Contact us
-              </button>
+                  <div class="footer__iagree text-center">
+                    <input type="checkbox" id="agree" name="agree" />
+                    <label for="agree">I agree to the privacy policy</label>
+                  </div>
+                </div>
 
-              <div class="text-center">
-                <input type="checkbox" id="agree" name="agree" />
-                <label for="agree">I agree to the privacy policy</label>
-              </div>
-            </div>
-
-            <!-- <p class="form-terms">
+                <!-- <p class="form-terms">
                   Натискаючи на кнопку я погоджуюсь
                   <a class="form-terms__link" href="#"
                     >з політикою конфіденційності</a
                   >
                 </p> -->
-          </form>
+              </form>
 
-          <!-- <address class="footer-address footer-address-ul"> -->
+              <!-- <address class="footer-address footer-address-ul"> -->
+            </div>
+            <!-- png - чтобы лапка на фон  сверху свисала -->
+            <img
+              class="footer__dog-img"
+              src="./images/footer-dog.png"
+              alt="Photo of a small dog"
+            />
+          </div>
         </div>
-        <img src="./images/footer-dog.jpg" alt="Photo of a small dog" />
-
         <!-- картинку псевдоэлементом ::after в _footer.scss -->
         <!-- <img src="./images/PhotoRoom.png" alt="Фото пляшечок з ліками" /> -->
         <!-- </div> -->
@@ -912,71 +1016,122 @@
           </svg>
         </button>
         <!-- <h2 class="modal-title">Замовити дзвінок</h2> -->
-        <h2 class="modal__title">Замовити дзвінок</h2>
+        <h2 class="modal__title">Our experts will take care of your friend</h2>
+
+        <svg class="sled sled__modal sled__modal--right-top">
+          <use href="./images/icons.svg#icon-sled"></use>
+        </svg>
+        <svg class="sled sled__modal sled__modal--right-end">
+          <use href="./images/icons.svg#icon-sled"></use>
+        </svg>
+
+        <svg class="sled sled__modal sled__modal--left-top">
+          <use href="./images/icons.svg#icon-sled"></use>
+        </svg>
+
+        <svg class="sled sled__modal sled__modal--left-end">
+          <use href="./images/icons.svg#icon-sled"></use>
+        </svg>
 
         <!-- <form name="contact-form" autocomplete="on" novalidate> -->
         <form name="modal-form" autocomplete="on">
-          <p class="modal__text">
-            Запишіться <span class="text-brand">безкоштовно</span> та отримайте
-            подарунок
-          </p>
+          <p class="modal__text">Fill out the form so we can contact you!</p>
           <!-- <div class="modal__form-field input"> -->
-          <div class="modal__form-field">
+          <!-- <div class="modal__form-field modal__form-field--user-name input"> -->
+          <!-- <div class="modal__form-field1 modal__form-field1--user-name input"> -->
+          <div class="modal__form-field modal__form-field--user-name input">
             <label label class="input__label visually-hidden" for="user-name"
-              >Ваше ім'я та прізвище</label
+              >Your name</label
             >
+
+            <!-- class="input__control input__img input__img--user-name" -->
+            <!-- pattern="^[Є-ЯҐа-їґ]+\s[Є-ЯҐа-їґ]+$" -->
             <input
               class="input__control"
               type="text"
               id="user-name"
               name="user-name"
-              placeholder="Ваше ім'я та прізвище"
-              pattern="^[Є-ЯҐа-їґ]+\s[Є-ЯҐа-їґ]+$"
+              placeholder="Your name"
+              pattern="^[A-Za-z]+\s[A-Za-z]+$"
               required
             />
           </div>
 
-          <div class="modal__form-field input">
+          <!-- <div class="modal__form-field input"> -->
+          <div class="modal__form-field modal__form-field--pet-name input">
+            <label label class="input__label visually-hidden" for="pet-name"
+              >Pet name</label
+            >
+            <input
+              class="input__control"
+              type="text"
+              id="pet-name"
+              name="pet-name"
+              placeholder="Pet name"
+              pattern="^[A-Za-z]+$"
+              required
+            />
+          </div>
+
+          <div class="modal__form-field modal__form-field--phone input">
             <label label class="input__label visually-hidden" for="user-tel"
-              >Ваш номер телефону</label
+              >Your phone</label
             >
             <input
               class="input__control"
               type="tel"
               id="user-tel"
               name="user-tel"
-              placeholder="Ваш номер телефону"
+              placeholder="Your phone"
               pattern="^\+380[0-9]{9}"
               required
             />
           </div>
           <!-- +380ХХХХХХХХХ -->
 
-          <div class="modal__form-field input">
+          <div class="modal__form-field modal__form-field--email input">
             <label label class="input__label visually-hidden" for="user-email"
-              >Ваша електронна пошта</label
+              >Your email</label
             >
             <input
               class="input__control"
               type="email"
               id="user-email"
               name="user-email"
-              placeholder="Ваша електронна пошта"
+              placeholder="Your email"
               required
             />
           </div>
 
           <button class="modal__button button button__section" type="submit">
-            Записатись безкоштовно
+            Contact us
           </button>
 
-          <p class="form-terms">
+          <div class="footer__iagree text-center">
+            <input type="checkbox" id="agree" name="agree" />
+            <label for="agree">I agree to the privacy policy</label>
+          </div>
+
+          <!-- <p class="form-terms">
             Натискаючи на кнопку я погоджуюсь
-            <!-- <a class="form-terms-link" href="#">політикою конфіденційності</a> -->
             <a class="form-terms__link" href="#"
               >з політикою конфіденційності</a
             >
-          </p>
+          </p> -->
+
+          <!-- <div class="contacts-section__btn-center">
+                  <button
+                    class="button__footer button button--center"
+                    type="submit"
+                  >
+                    Contact us
+                  </button>
+
+                  <div class="footer__iagree text-center">
+                    <input type="checkbox" id="agree" name="agree" />
+                    <label for="agree">I agree to the privacy policy</label>
+                  </div>
+                </div> -->
         </form>
       </div>
     </div>
